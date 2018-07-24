@@ -2,17 +2,19 @@ body {
     margin: 0px;
     overflow: hidden;
 }
+h1 {
+    color: white;
+}
 #gameBoard {
     width: 100%;
     height: 600px;
     border: 1px solid black;
     background-image: url("img/darkness.png");
     position: relative;
-
 }
 #rocket {
     position:absolute;
-    margin-left: 250px;
+    margin-left: 45%;
     margin-top: 500px; 
 }
 #rocket:hover {
@@ -23,6 +25,40 @@ body {
 #arrow {
     opacity: 0.1;
 }
+
+#ufo {
+    position: absolute;
+    -webkit-animation-name: moveUfo; 
+    -webkit-animation-duration: 8s; 
+    -webkit-animation-iteration-count: infinite; 
+    -webkit-animation-direction: alternate-reverse; 
+    animation-name: moveUfo;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+#ufo:hover{
+    cursor: pointer;
+    transform: rotate(360deg);
+  
+}
+
+@-webkit-keyframes moveUfo {
+    0%   {left:0px; top:0px;}
+    25%  {left:200px; top:0px;}
+    50%  {left:200px; top:200px;}
+    75%  {left:0px; top:200px;}
+    100% {left:0px; top:0px;}
+}
+@keyframes moveUfo {
+    0%   {left:800px; top:500px;}
+    25%  {left:150px; top:500px;}
+    50%  {left:150px; top:200px;}
+    75%  {left:800px; top:200px;}
+    100% {left:800px; top:500px;}
+}
+
+
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
